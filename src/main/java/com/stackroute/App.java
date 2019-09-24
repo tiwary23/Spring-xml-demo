@@ -1,5 +1,6 @@
 package com.stackroute;
 
+import com.stackroute.demo.BeanLifecycleDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
@@ -26,5 +27,8 @@ public class App
         ApplicationContext context=new ClassPathXmlApplicationContext("springconfig");
         Movie movie=context.getBean("movie", Movie.class);
         System.out.println(movie);
+
+        BeanLifecycleDemoBean lifecycle=context.getBean("beanlifecycle",BeanLifecycleDemoBean.class);
+        System.out.println(lifecycle);
     }
 }
