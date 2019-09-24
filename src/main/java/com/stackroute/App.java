@@ -20,15 +20,14 @@ public class App
 {
     public static void main( String[] args )
     {
-        ApplicationContext context= new ClassPathXmlApplicationContext("springconfig");
-        System.out.println("Through Application context");
-        Movie movie=context.getBean("movie", Movie.class);
-        System.out.println(movie);
+        ApplicationContext context = new ClassPathXmlApplicationContext("springconfig");
+        System.out.println("container worked");
+        Movie movie = context.getBean("MovieA",Movie.class);
+        System.out.println("object created");
 
-        BeanFactory factory = new XmlBeanFactory(new ClassPathResource("springconfig"));
-        System.out.println("Through Bean factory");
-        Movie movie1=(Movie)factory.getBean("movie");
-        System.out.println(movie);
+
+        Movie movie1 = context.getBean("MovieB",Movie.class);
+        System.out.println(movie==movie1);
 
 
 

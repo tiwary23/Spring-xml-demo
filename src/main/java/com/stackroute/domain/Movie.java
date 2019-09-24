@@ -2,16 +2,10 @@ package com.stackroute.domain;
 
 public class Movie {
 
-    private Actor actor;
+    private Actor actor1;
 
-    public void setActor(Actor actor) {
-        this.actor = actor;
-    }
 
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "actor=" + actor +
-                '}';
+    public Movie(Actor actor1) {
+        this.actor1 = actor1;
     }
 }
