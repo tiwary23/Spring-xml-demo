@@ -21,8 +21,12 @@
         <constructor-arg value="45" index="2" />
     </bean>
 
-    <bean name="MovieA, MovieB" id="movie" class="com.stackroute.domain.Movie" scope="prototype" >
-        <constructor-arg ref="actor1"/>
+    <bean name="MovieA" id="movie" class="com.stackroute.domain.Movie" autowire="byName" >
+    </bean>
+
+    <bean name="MovieB" class="com.stackroute.domain.Movie">
+        <constructor-arg name="actor1" ref="actor1"/>
+
     </bean>
 
 </beans>
